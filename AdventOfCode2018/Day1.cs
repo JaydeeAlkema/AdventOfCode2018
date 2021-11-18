@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode2018
 {
-	public class Program
+	public class Day1
 	{
-		static void Main( string[] args )
+		public Day1()
 		{
-			Day1 day1 = new Day1();
+			Console.WriteLine( "Hello" );
 		}
 	}
 }
