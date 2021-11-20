@@ -24,6 +24,7 @@ namespace AdventOfCode2018
 			// Start Timer
 			startTime = DateTime.Now;
 
+			// Do Code Stuff
 			for( int i = 0; i < data.Count; i++ )
 			{
 				frequency += data[i];
@@ -56,6 +57,7 @@ namespace AdventOfCode2018
 			// Start Timer
 			startTime = DateTime.Now;
 
+			// Do Code Stuff
 			var frequencies = new HashSet<int>();
 			while( !found )
 			{
