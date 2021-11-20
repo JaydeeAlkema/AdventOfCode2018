@@ -6,17 +6,15 @@ namespace AdventOfCode2018
 {
 	public class Day1
 	{
-
-		private DateTime startTime;
-		private TimeSpan duration;
-
-		List<int> data = new List<int>();
-		HashSet<int> frequencies = new HashSet<int>();
-		int frequency = 0;
-
-		public Day1( int part )
+		public void Part1()
 		{
 			// Input
+			DateTime startTime;
+			TimeSpan duration;
+
+			List<int> data = new List<int>();
+			int frequency = 0;
+
 			string[] dataArray = System.IO.File.ReadAllLines( "../../Day1_Input.txt" );
 			foreach( string dataText in dataArray )
 			{
@@ -26,14 +24,9 @@ namespace AdventOfCode2018
 			// Start Timer
 			startTime = DateTime.Now;
 
-			// Do Code Stuff
-			if( part == 1 )
+			for( int i = 0; i < data.Count; i++ )
 			{
-				Part1();
-			}
-			else if( part == 2 )
-			{
-				Part2();
+				frequency += data[i];
 			}
 
 			// Get Duration
@@ -41,30 +34,47 @@ namespace AdventOfCode2018
 
 			// Print Duration
 			Console.WriteLine( $"{this.GetType().Name} Solution took: {duration.TotalMilliseconds} Milliseconds.\n" );
-			Console.WriteLine( $"{this.GetType().Name} Ouput: {frequency}" );
+			Console.WriteLine( $"{this.GetType().Name} Part 1 Ouput: {frequency}" );
 		}
 
-		private void Part1()
+		public void Part2()
 		{
-			for( int i = 0; i < data.Count; i++ )
+			// Input
+			DateTime startTime;
+			TimeSpan duration;
+
+			List<int> data = new List<int>();
+			int frequency = 0;
+			bool found = false;
+
+			string[] dataArray = System.IO.File.ReadAllLines( "../../Day1_Input.txt" );
+			foreach( string dataText in dataArray )
 			{
-				frequency += data[i];
+				data.Add( Convert.ToInt32( dataText.Trim() ) );
 			}
-		}
 
-		private void Part2()
-		{
-			while( true )
+			// Start Timer
+			startTime = DateTime.Now;
+
+			var frequencies = new HashSet<int>();
+			while( !found )
 			{
 				for( int i = 0; i < data.Count; i++ )
 				{
 					frequency += data[i];
 					if( !frequencies.Add( frequency ) )
 					{
-						return;
+						found = true;
 					}
 				}
 			}
+
+			// Get Duration
+			duration = DateTime.Now - startTime;
+
+			// Print Duration
+			Console.WriteLine( $"{this.GetType().Name} Solution took: {duration.TotalMilliseconds} Milliseconds.\n" );
+			Console.WriteLine( $"{this.GetType().Name} Part 2 Ouput: {frequency}" );
 		}
 	}
 }
