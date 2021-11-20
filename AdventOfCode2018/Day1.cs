@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace AdventOfCode2018
 {
@@ -10,9 +11,8 @@ namespace AdventOfCode2018
 		private TimeSpan duration;
 
 		List<int> data = new List<int>();
-		List<int> frequencies = new List<int>();
+		HashSet<int> frequencies = new HashSet<int>();
 		int frequency = 0;
-		bool duplicateFrequencyFound = false;
 
 		public Day1( int part )
 		{
@@ -54,13 +54,16 @@ namespace AdventOfCode2018
 
 		private void Part2()
 		{
-			for( int i = 0; i < data.Count; i++ )
+			while( true )
 			{
-				frequency += data[i];
-				frequencies.Add( frequency );
-			}
-			for( int d = 0; d < frequencies.Count; d++ )
-			{
+				for( int i = 0; i < data.Count; i++ )
+				{
+					frequency += data[i];
+					if( !frequencies.Add( frequency ) )
+					{
+						return;
+					}
+				}
 			}
 		}
 	}
