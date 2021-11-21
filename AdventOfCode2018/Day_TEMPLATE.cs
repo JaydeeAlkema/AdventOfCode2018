@@ -2,13 +2,13 @@
 
 namespace AdventOfCode2018
 {
-	public class Day_template
+	public class Day_Template
 	{
 
 		private DateTime startTime;
 		private TimeSpan duration;
 
-		public Day_template()
+		public Day_Template()
 		{
 			// Set Data
 
