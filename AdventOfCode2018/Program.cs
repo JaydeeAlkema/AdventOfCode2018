@@ -16,16 +16,20 @@ namespace AdventOfCode2018
 
 			Console.WriteLine( "\n############### DAY 1 ###############" );
 			day1.Part1();
+			Console.WriteLine();
 			day1.Part2();
 			Console.WriteLine( "______________________________________\n" );
 
 			Console.WriteLine( "\n############### DAY 2 ###############" );
 			day2.Part1();
+			Console.WriteLine();
 			day2.Part2();
 			Console.WriteLine( "______________________________________\n" );
 
 			Console.WriteLine( "\n############### DAY 3 ###############" );
 			day3.Part1();
+			Console.WriteLine();
+			day3.Part2();
 			Console.WriteLine( "______________________________________\n" );
 
 		}

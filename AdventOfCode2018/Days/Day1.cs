@@ -15,7 +15,7 @@ namespace AdventOfCode2018
 			List<int> data = new List<int>();
 			int frequency = 0;
 
-			string[] dataArray = System.IO.File.ReadAllLines( "../../Day1_Input.txt" );
+			string[] dataArray = System.IO.File.ReadAllLines( "../../Days/Inputs/Day1_Input.txt" );
 			foreach( string dataText in dataArray )
 			{
 				data.Add( Convert.ToInt32( dataText.Trim() ) );
@@ -48,7 +48,7 @@ namespace AdventOfCode2018
 			int frequency = 0;
 			bool found = false;
 
-			string[] dataArray = System.IO.File.ReadAllLines( "../../Day1_Input.txt" );
+			string[] dataArray = System.IO.File.ReadAllLines( "../../Days/Inputs/Day1_Input.txt" );
 			foreach( string dataText in dataArray )
 			{
 				data.Add( Convert.ToInt32( dataText.Trim() ) );

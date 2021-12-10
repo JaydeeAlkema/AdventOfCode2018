@@ -19,7 +19,7 @@ namespace AdventOfCode2018
 			int triples = 0;
 
 			Dictionary<char, int> charDictionary = new Dictionary<char, int>();
-			string[] dataArray = System.IO.File.ReadAllLines( "../../Day2_Input.txt" );
+			string[] dataArray = System.IO.File.ReadAllLines( "../../Days/Inputs/Day2_Input.txt" );
 
 			// Start Timer
 			startTime = DateTime.Now;
@@ -54,7 +54,7 @@ namespace AdventOfCode2018
 			TimeSpan duration;
 
 			List<string> sortedData = new List<string>();
-			string[] dataArray = System.IO.File.ReadAllLines( "../../Day2_Input.txt" );
+			string[] dataArray = System.IO.File.ReadAllLines( "../../Days/Inputs/Day2_Input.txt" );
 			StringBuilder chars = new StringBuilder();
 			int diff = 0;
 

@@ -58,8 +58,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Day1_Input.txt" />
-    <Content Include="Day2_Input.txt" />
+    <Content Include="Days\Inputs\Day1_Input.txt" />
+    <Content Include="Days\Inputs\Day2_Input.txt" />
+    <Content Include="Days\Inputs\Day3_Input.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Days\Outputs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
