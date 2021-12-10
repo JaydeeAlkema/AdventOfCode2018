@@ -34,8 +34,8 @@ namespace AdventOfCode2018
 			duration = DateTime.Now - startTime;
 
 			// Print Duration
-			Console.WriteLine( $"{this.GetType().Name} Part 1 Solution took: {duration.TotalMilliseconds} Milliseconds." );
-			Console.WriteLine( $"{this.GetType().Name} Part 1 Ouput: {frequency}\n" );
+			Console.WriteLine( $"Part 1 Solution took: {duration.TotalMilliseconds} Milliseconds." );
+			Console.WriteLine( $"Part 1 Ouput: {frequency}" );
 		}
 
 		public void Part2()
@@ -75,8 +75,8 @@ namespace AdventOfCode2018
 			duration = DateTime.Now - startTime;
 
 			// Print Duration
-			Console.WriteLine( $"{this.GetType().Name} Part 2 Solution took: {duration.TotalMilliseconds} Milliseconds." );
-			Console.WriteLine( $"{this.GetType().Name} Part 2 Ouput: {frequency}\n" );
+			Console.WriteLine( $"Part 2 Solution took: {duration.TotalMilliseconds} Milliseconds." );
+			Console.WriteLine( $"Part 2 Ouput: {frequency}" );
 		}
 	}
 }
