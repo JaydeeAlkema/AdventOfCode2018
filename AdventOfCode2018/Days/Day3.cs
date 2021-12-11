@@ -12,7 +12,7 @@ namespace AdventOfCode2018
 			TimeSpan duration;
 
 			string[] dataArray = System.IO.File.ReadAllLines( "../../Days/Inputs/Day3_Input.txt" );
-			List<Claim> claims = new List<Claim>();
+			char[] dataSplit = new char[] { '#', '@', ',', ':', 'x' };
 			var positions = new HashSet<(int x, int y)>();
 			var overlaps = new HashSet<(int x, int y)>();
 
@@ -24,23 +24,15 @@ namespace AdventOfCode2018
 			// Parse raw data to claim struct
 			foreach( var data in dataArray )
 			{
-				string[] splitData = data.Split( new char[] { '#', '@', ',', ':', 'x' } );
-				Claim _claim = new Claim
-				{
-					ID = int.Parse( splitData[1] ),
-					x = int.Parse( splitData[2] ),
-					y = int.Parse( splitData[3] ),
-					width = int.Parse( splitData[4] ),
-					height = int.Parse( splitData[5] )
-				};
-				claims.Add( _claim );
-			}
+				string[] splitData = data.Split( dataSplit, StringSplitOptions.RemoveEmptyEntries );
+				int posX = int.Parse( splitData[1] );
+				int posY = int.Parse( splitData[2] );
+				int width = int.Parse( splitData[3] );
+				int height = int.Parse( splitData[4] );
 
-			foreach( var claim in claims )
-			{
-				for( int x = claim.x; x < claim.width + claim.x; x++ )
+				for( int x = posX; x < width + posX; x++ )
 				{
-					for( int y = claim.y; y < claim.height + claim.y; y++ )
+					for( int y = posY; y < height + posY; y++ )
 					{
 						if( !positions.Add( (x, y) ) )
 						{
@@ -50,41 +42,12 @@ namespace AdventOfCode2018
 				}
 			}
 
-			// Loop through all the claims and calculate total square inches that are overlapping
-
 			// Get Duration
 			duration = DateTime.Now - startTime;
 
 			// Print Duration
-			Console.WriteLine( $"Part 1 Solution took: {duration.TotalMilliseconds} Milliseconds." );
-			Console.WriteLine( $"Part 1 Output: {overlaps.Count}." );
-		}
-
-		public void Part2()
-		{
-			// Set Data
-			DateTime startTime;
-			TimeSpan duration;
-
-			// Start Timer
-			startTime = DateTime.Now;
-
-			// Do code stuff
-
-			// Get Duration
-			duration = DateTime.Now - startTime;
-
-			// Print Duration
-			Console.WriteLine( $"Part 1 Solution took: {duration.TotalMilliseconds} Milliseconds." );
+			Console.WriteLine( $"Part 2 Solution took: {duration.TotalMilliseconds} Milliseconds." );
+			Console.WriteLine( $"Part 2 Output: {overlaps.Count}" );
 		}
 	}
-}
-
-public struct Claim
-{
-	public int ID;
-	public int x;
-	public int y;
-	public int width;
-	public int height;
 }

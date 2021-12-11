@@ -29,7 +29,7 @@ namespace AdventOfCode2018
 			Console.WriteLine( "\n############### DAY 3 ###############" );
 			day3.Part1();
 			Console.WriteLine();
-			day3.Part2();
+			//day3.Part2();
 			Console.WriteLine( "______________________________________\n" );
 
 		}
